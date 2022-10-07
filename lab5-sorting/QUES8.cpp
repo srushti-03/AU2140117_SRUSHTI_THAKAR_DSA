@@ -8,18 +8,18 @@
 #include <iostream>
 using namespace std;
 
-// to find the maximum element in the array
-int getMaximum(int array[], int n)
+// for finding the maximum element from an array
+int getMaximum(int arr[], int n)
 {
-    int max = array[0];
+    int max = arr[0];
     for (int i = 1; i < n; i++)
-        if (array[i] > max)
-            max = array[i];
+        if (arr[i] > max)
+            max = arr[i];
     return max;
 }
 
-// Using counting sort to sort the values based on their significant places
-void countingSort(int array[], int size, int place)
+// Using counting sort to sort the elements in the basis of significant places
+void countingSort(int arr[], int size, int place)
 {
     const int max = 10;
     int output[size];
@@ -28,23 +28,23 @@ void countingSort(int array[], int size, int place)
     for (int i = 0; i < max; ++i)
         count[i] = 0;
 
-    // to calculate count of elements
+    // to Calculate count of elements
     for (int i = 0; i < size; i++)
-        count[(array[i] / place) % 10]++;
+        count[(arr[i] / place) % 10]++;
 
     // to calculate cumulative count
     for (int i = 1; i < max; i++)
         count[i] += count[i - 1];
 
-    // for sorting the values
+    // to sort the values
     for (int i = size - 1; i >= 0; i--)
     {
-        output[count[(array[i] / place) % 10] - 1] = array[i];
-        count[(array[i] / place) % 10]--;
+        output[count[(arr[i] / place) % 10] - 1] = arr[i];
+        count[(arr[i] / place) % 10]--;
     }
 
     for (int i = 0; i < size; i++)
-        array[i] = output[i];
+        arr[i] = output[i];
 }
 
 // RadixSort main function
@@ -53,7 +53,7 @@ void radixSort(int array[], int size)
     // for getting maximum element
     int max = getMaximum(array, size);
 
-    // Apply counting sort to sort elements based on place value.
+    // Apply counting sort to arrange elements based on place value.
     for (int place = 1; max / place > 0; place *= 10)
         countingSort(array, size, place);
 }
@@ -67,7 +67,7 @@ void display(int array[], int size)
     cout << endl;
 }
 
-
+// Driver code
 int main()
 {
     int n;
