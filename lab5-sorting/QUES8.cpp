@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 
-// for finding the maximum element from an array
+// to find the maximum element in the array
 int getMaximum(int array[], int n)
 {
     int max = array[0];
@@ -18,7 +18,7 @@ int getMaximum(int array[], int n)
     return max;
 }
 
-// Using counting sort to sort the elements in the basis of significant places
+// Using counting sort to sort the values based on their significant places
 void countingSort(int array[], int size, int place)
 {
     const int max = 10;
@@ -28,15 +28,15 @@ void countingSort(int array[], int size, int place)
     for (int i = 0; i < max; ++i)
         count[i] = 0;
 
-    // to Calculate count of elements
+    // to calculate count of elements
     for (int i = 0; i < size; i++)
         count[(array[i] / place) % 10]++;
 
-    // to Calculate cumulative count
+    // to calculate cumulative count
     for (int i = 1; i < max; i++)
         count[i] += count[i - 1];
 
-    // Place the elements in sorted order
+    // for sorting the values
     for (int i = size - 1; i >= 0; i--)
     {
         output[count[(array[i] / place) % 10] - 1] = array[i];
@@ -47,7 +47,7 @@ void countingSort(int array[], int size, int place)
         array[i] = output[i];
 }
 
-// RadixSort
+// RadixSort main function
 void radixSort(int array[], int size)
 {
     // for getting maximum element
@@ -67,7 +67,7 @@ void display(int array[], int size)
     cout << endl;
 }
 
-// Driver code
+
 int main()
 {
     int n;
