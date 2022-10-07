@@ -19,12 +19,12 @@ int partition(int arr[], int low, int high)
         if (arr[j] <= pivot) {
             i++; 
             int t=arr[i];
-            arr[i]=arr[j];
-            arr[j]=t;
+            arr[i]=arr[j];           //swapping the values of arr[i] and arr[j]
+             arr[j]=t;
         }
     }
     int temp=arr[i+1];
-    arr[i+1]=arr[high];
+    arr[i+1]=arr[high];      //swapping the value of arr[i+1] and arr[high]
     arr[high]=temp;
 
     return (i + 1);
