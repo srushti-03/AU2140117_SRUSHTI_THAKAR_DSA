@@ -18,7 +18,7 @@ int getMaximum(int arr[], int n)
     return max;
 }
 
-// Using counting sort to sort the elements in the basis of significant places
+// Using counting sort to sort the elements based on significant places
 void countingSort(int arr[], int size, int place)
 {
     const int max = 10;
@@ -28,7 +28,7 @@ void countingSort(int arr[], int size, int place)
     for (int i = 0; i < max; ++i)
         count[i] = 0;
 
-    // to Calculate count of elements
+    // to calculate count of elements
     for (int i = 0; i < size; i++)
         count[(arr[i] / place) % 10]++;
 
@@ -67,7 +67,7 @@ void display(int array[], int size)
     cout << endl;
 }
 
-// Driver code
+
 int main()
 {
     int n;
