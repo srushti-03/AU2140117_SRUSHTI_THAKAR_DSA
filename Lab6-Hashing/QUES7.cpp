@@ -16,8 +16,9 @@ void Hash(int arr1[], int arr2[][10], int n)
     int key;
     for (int i = 0; i < n; i++)
     {
+
         key = arr1[i] % 10;
-        if (arr2[key][0] == -1)
+        if (arr2[key][0] == 0)
         {
             arr2[key][0] = arr1[i];
         }
@@ -26,7 +27,7 @@ void Hash(int arr1[], int arr2[][10], int n)
 
             for (int j = 1; j < 10; j++)
             {
-                if (arr2[key][j] == -1)
+                if (arr2[key][j] == 0)
                 {
                     arr2[key][j] = arr1[i];
                     break;
@@ -51,7 +52,8 @@ void searchKey(int arr1[], int arr2[][10], int n, int element)
     a = element % 10;
     if (arr2[a][0] == element)
     {
-        cout << a << " " << 0;
+        cout << "the element was found at index: " << endl;
+        cout <<"row: "<<a<< " "<<"column: " << 0;
     }
     else
     {
@@ -60,19 +62,21 @@ void searchKey(int arr1[], int arr2[][10], int n, int element)
             if (arr2[a][j] == element)
             {
                 cout << "the element was found at index: " << endl; // searching for the key in the 2D array hash table
-                cout << "row: " << a << " "
-                     << "column: " << j << endl;
+                cout << "row: " <<a<< " "<< "column: " << j << endl;
                 break;
             }
         }
         cout << "the element is not found in the array! " << endl;
 
-        // here -1 means that no element is present at that particular index in the hash
+        // here 0 means that no element is present at that particular index in the hash
     }
 }
 
 int main()
 {
+
+    //inputting elements into the array
+
     int n, element;
     cout << "enter the number of elements you want to add in the array: " << endl;
     cin >> n;
@@ -87,7 +91,8 @@ int main()
     { // enter elements you want to add into the hash table
         for (int j = 0; j < 10; j++)
         {
-            arr2[i][j] = -1;
+            arr2[i][j] = 0;
+            //initializing all elements of the array to 0
         }
     }
     Hash(arr1, arr2, n);
@@ -99,22 +104,24 @@ int main()
 
 // sample output:
 
+
 // enter the number of elements you want to add in the array:
-// 5
-// enter the array elements :
-// 1 2 3 4 5
-// the 2d array hash table is as follows:
-// -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-// 1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-// 2 -1 -1 -1 -1 -1 -1 -1 -1 -1
-// 3 -1 -1 -1 -1 -1 -1 -1 -1 -1
-// 4 -1 -1 -1 -1 -1 -1 -1 -1 -1
-// 5 -1 -1 -1 -1 -1 -1 -1 -1 -1
-// -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-// -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-// -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
-// -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+// 5 
+// enter the array elements : 
+// 12 10 34 7 56
+// the 2d array hash table is as follows: 
+// 10 0 0 0 0 0 0 0 0 0 
+// 0 0 0 0 0 0 0 0 0 0 
+// 12 0 0 0 0 0 0 0 0 0 
+// 0 0 0 0 0 0 0 0 0 0 
+// 34 0 0 0 0 0 0 0 0 0 
+// 0 0 0 0 0 0 0 0 0 0 
+// 56 0 0 0 0 0 0 0 0 0 
+// 7 0 0 0 0 0 0 0 0 0 
+// 0 0 0 0 0 0 0 0 0 0 
+// 0 0 0 0 0 0 0 0 0 0 
 // enter the key to be searched:
-// 5
-// the element was found at index:
-// row: 5 column: 0
+// 34
+// the element was found at index:  
+// row: 4 column: 0
+
