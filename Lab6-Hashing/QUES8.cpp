@@ -154,12 +154,12 @@ int main()
 
     // sample test case
 
-    HT_2D default_server1(17, 8);                 // setting the value of rows and columns of the 2d array
-    default_server1.Hashing_old_servers();        // hashing the default servers
-    default_server1.Hash2D_print();               // printing the hash table for the default values of servers
-    default_server1.crashed_server(2,15,10,7); // setting any 4 out of 17 servers as defective
-    default_server1.Hashing_New_Servers();        // hashing the new servers(that is 17-4=13 servers)
-    default_server1.Hash2D_print_Crash();         // printing the hash table for the new values of servers
+    HT_2D server1(17, 8);                 // setting the value of rows and columns of the 2d array
+    server1.Hashing_old_servers();        // hashing the default servers
+    server1.Hash2D_print();               // printing the hash table for the default values of servers
+    server1.crashed_server(2,15,10,7); // setting any 4 out of 17 servers as defective
+    server1.Hashing_New_Servers();        // hashing the new servers(that is 17-4=13 servers)
+    server1.Hash2D_print_Crash();         // printing the hash table for the new values of servers
 
     return 0;
 }
